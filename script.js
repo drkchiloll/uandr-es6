@@ -1,16 +1,18 @@
-// LET Demo
-var x = 10;
-if(x) {
-  let x = 4; // BLOCK Scope
-}
-console.log(x); // x = 10
+// CONST
+const birthYear = 1985;
+// var birthYear = 1977; // WEBPACK BARF
+var age = 2015 - birthYear;
+console.log(age);
 
-// If you use VAR in place of LET
-// When a Block is Clicked the Box # will always be 45
-for(let i=0; i<45;i++) {
-  var div = document.createElement('div');
-  div.onclick = function() {
-    alert('You Clicked on a Box #' + i);
-  };
-  document.getElementsByTagName('section')[0].appendChild(div);
+function coldEnough(deg) {
+  const freezingTemp = 32;
+  if(freezingTemp <= deg) {
+    return deg + ' is above freezing.';
+  } else {
+    return deg + ' is below freezing.';
+  }
 }
+
+console.log(coldEnough(40));
+console.log(coldEnough(12));
+console.log(coldEnough(-10));
