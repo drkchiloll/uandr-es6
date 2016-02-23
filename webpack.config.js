@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './script.js',
+  entry: ['babel-polyfill', './script.js'],
   output: {filename: 'es5.js'},
   module: {
     loaders: [{
